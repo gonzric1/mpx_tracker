@@ -57,12 +57,17 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'rspec-rails'
+  # Capybara, the library that allows us to interact with the browser using Ruby
+  gem 'capybara'
+  # The following gems aids with the nuts and bolts
+  # of interacting with the browser.
+  gem 'webdrivers'
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "guard"
-
+  gem "annotate"
   gem "web-console"
   gem 'guard-livereload', '~> 2.5', require: false
   gem "rack-livereload"
@@ -79,14 +84,4 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
-end
-
-group :development, :test do
-  # The RSpec testing framework
-  gem 'rspec-rails'
-  # Capybara, the library that allows us to interact with the browser using Ruby
-  gem 'capybara'
-  # The following gems aids with the nuts and bolts
-  # of interacting with the browser.
-  gem 'webdrivers'
 end

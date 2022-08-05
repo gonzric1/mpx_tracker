@@ -1,48 +1,49 @@
-= form_with(model: @location) do |form|
-  - if @location.errors.any?
-    div style="color: red"
-      h2 = "#{pluralize(@location.errors.count, "error")} prohibited this location from being saved:"
-      ul
-        - @location.errors.each do |error|
-          li = error.full_message
+.container
+  = form_with(model: @location) do |form|
+    - if @location.errors.any?
+      div style="color: red"
+        h2 = "#{pluralize(@location.errors.count, "error")} prohibited this location from being saved:"
+        ul
+          - @location.errors.each do |error|
+            li = error.full_message
 
-  div
-    = form.label :name, style: "display: block"
-    = form.text_area :name
+    div
+      = form.label :name, style: "display: block"
+      = form.text_field :name
 
-  div
-    = form.label :available_vaccines, style: "display: block"
-    = form.number_field :available_vaccines
+    div
+      = form.label :available_vaccines, style: "display: block"
+      = form.number_field :available_vaccines
 
-  div
-    = form.label :phone, style: "display: block"
-    = form.text_area :phone
+    div
+      = form.label :phone, style: "display: block"
+      = form.text_field :phone
 
-  div
-    = form.label :city, style: "display: block"
-    = form.text_area :city
+    div
+      = form.label :city, style: "display: block"
+      = form.text_field :city
 
-  div
-    = form.label :state, style: "display: block"
-    = form.text_area :state
+    div
+      = form.label :state, style: "display: block"
+      = form.text_field :state
 
-  div
-    = form.label :street, style: "display: block"
-    = form.text_area :street
+    div
+      = form.label :street, style: "display: block"
+      = form.text_field :street
 
-  div
-    = form.label :zip, style: "display: block"
-    = form.text_area :zip
+    div
+      = form.label :zip, style: "display: block"
+      = form.text_field :zip
 
-  div
-    = form.label :location_type, style: "display: block"
-    = form.text_area :location_type
+    div
+      = form.label :location_type, style: "display: block"
+      = form.select :location_type, Location::LOCATION_TYPES
 
-  div
-    = form.label :appointment, style: "display: block"
-    = form.text_area :appointment
-  div
-    = form.label :url, style: "display: block"
-    = form.text_area :url
-  div
-    = form.submit
+    div
+      = form.label :appointment, style: "display: block"
+      = form.select :appointment, Location::APPOINTMENT_TYPES
+    div
+      = form.label :url, style: "display: block"
+      = form.text_field :url
+    div
+      = form.submit
