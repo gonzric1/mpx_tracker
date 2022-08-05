@@ -80,3 +80,13 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+group :development, :test do
+  # The RSpec testing framework
+  gem 'rspec-rails'
+  # Capybara, the library that allows us to interact with the browser using Ruby
+  gem 'capybara'
+  # The following gems aids with the nuts and bolts
+  # of interacting with the browser.
+  gem 'webdrivers'
+end
