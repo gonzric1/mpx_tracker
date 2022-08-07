@@ -3,6 +3,15 @@ p style="color: green" = notice
 h1 Locations
 
 #locations
+table class="table table-striped"
+  thead
+    tr
+      th scope="col" Location
+      th scope="col" Phone
+      th scope="col" Address
+      th scope="col" Location Type
+      th scope="col" Next Appointment
+  tbody
   - @locations.each do |location|
     == render location
     p

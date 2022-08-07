@@ -1,28 +1,11 @@
-div id="#{dom_id location}"
-  p
-    strong Name:
+tr id="#{dom_id location}"
+  th scope="row"
     =< location.name
-  p
-    strong Available vaccines:
-    =< location.available_vaccines
-  p
-    strong Phone:
+  td
     =< location.phone
-  p
-    strong City:
-    =< location.city
-  p
-    strong State:
-    =< location.state
-  p
-    strong Street:
-    =< location.street
-  p
-    strong Zip:
-    =< location.zip
-  p
-    strong Location type:
+  td 
+    =< location.address
+  td
     =< location.location_type
-  p
-    strong Appointment:
+  td
     =< location.appointment
