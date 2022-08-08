@@ -14,6 +14,6 @@ table class="table table-striped"
       th scope="col" Phone
   tbody
   - @locations.each do |location|
-    == render location
+    == render "location_index", location: location
   
 

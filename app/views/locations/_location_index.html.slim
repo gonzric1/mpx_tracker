@@ -1,0 +1,19 @@
+tr id="#{dom_id location}"
+  th scope="row"
+    =< location.state
+  td
+    =< location.city
+  td
+    strong
+      =< link_to location.name, location
+  td
+    =< location.location_type
+  td
+    =< location.appointment
+  td
+    =< location.updated_at
+  td
+    =< location.phone
+tr
+  td colspan="7"
+    ==< location.notes

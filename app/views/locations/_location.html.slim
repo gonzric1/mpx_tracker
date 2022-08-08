@@ -1,18 +1,7 @@
-tr id="#{dom_id location}"
-  th scope="row"
-    =< location.state
-  td
-    =< location.city
-  td
-    =< link_to location.name, location
-  td
-    =< location.location_type
-  td
-    =< location.appointment
-  td
-    =< location.updated_at
-  td
-    =< location.phone
-tr
-  td colspan="7"
-    ==< location.notes
+h1 #{location.name} - #{location.location_type}
+h4 =address(location)
+h4 Phone: #{tel_to location.phone}
+h4 Website: #{link_to location.url, location.url}
+
+h5.pt-3 More Information:
+==< location.notes
