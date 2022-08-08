@@ -4,10 +4,15 @@ tr id="#{dom_id location}"
   td
     =< location.phone
   td 
-    =< location.address
+    =< location.city
+  td
+    =< location.state
   td
     =< location.location_type
   td
     =< location.appointment
   td
+    =< location.updated_at
+tr
+  td colspan="7"
     ==< location.notes

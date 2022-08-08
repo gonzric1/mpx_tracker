@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
+
+20.times do
+  Location.create(
+    name: Faker::TvShows::Simpsons.location,
+    available_vaccines: rand(10),
+    phone: Faker::PhoneNumber.phone_number,
+    city: Faker::Address.city,
+    state: Faker::Address.state,
+    street: Faker::Address.street_address,
+    zip: Faker::Address.zip,
+    location_type: Location::LOCATION_TYPES.sample,
+    appointment: Location::APPOINTMENT_TYPES.sample,
+    url: Faker::Internet.url(host: 'example.com'),
+    notes: Faker::Lorem.paragraphs(number: 1)
+  )
+end

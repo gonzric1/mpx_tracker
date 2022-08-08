@@ -1,4 +1,4 @@
-h1 Vaccine Locations
+h1 Monkey Pox Vaccine Locations
 
 #locations
 table class="table table-striped"
@@ -6,10 +6,11 @@ table class="table table-striped"
     tr
       th scope="col" Location
       th scope="col" Phone
-      th scope="col" Address
+      th scope="col" City
+      th scope="col" State
       th scope="col" Location Type
-      th scope="col" Next Appointment
-      th scope="col" Notes
+      th scope="col" Appointment Type
+      th scope="col" Next Available
   tbody
   - @locations.each do |location|
     == render location
