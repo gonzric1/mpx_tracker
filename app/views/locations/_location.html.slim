@@ -1,18 +1,18 @@
 tr id="#{dom_id location}"
   th scope="row"
-    =< link_to location.name, location
+    =< location.state
   td
-    =< location.phone
-  td 
     =< location.city
   td
-    =< location.state
+    =< link_to location.name, location
   td
     =< location.location_type
   td
     =< location.appointment
   td
     =< location.updated_at
+  td
+    =< location.phone
 tr
   td colspan="7"
     ==< location.notes

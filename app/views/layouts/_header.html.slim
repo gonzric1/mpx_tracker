@@ -1,0 +1,16 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light.py-3
+  = link_to "MPX Vaccine Tracker", root_path, id: "logo", class: "navbar-brand d-flex align-items-center"
+  button.navbar-toggler data-bs-toggle="collapse" data-bs-target="#navcol-2"
+    span.visually-hidden Toggle navigation
+    span.navbar-toggler-icon
+  #navcol-2.collapse.navbar-collapse
+    ul.navbar-nav.ms-auto
+      li.nav-item.active
+        =link_to "Home",   root_path, class: "nav-link"
+        span.sr-only (current)
+      li.nav-item.nav-link =link_to "MonkeyPox Information"
+      -if current_user
+        li.nav-item.nav-link =link_to 'Sign Out', destroy_user_session_path, method: :delete
+      - else
+        li.nav-item.nav-link =link_to 'Sign In', new_user_session_path
+        li =link_to 'Sign Up', new_user_registration_path, class: "btn btn-primary ml-2"
