@@ -5,5 +5,7 @@ then
   echo "Installing foreman..."
   gem install foreman
 fi
-
+echo "annotating models"
+annotate --models
+echo "starting server"
 foreman start -f Procfile.dev "$@"
