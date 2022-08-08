@@ -17,6 +17,8 @@
 #  url                :text
 #
 class Location < ApplicationRecord
+  has_rich_text :notes
+
   #has_many Events
   LOCATION_TYPES = %w(Clinic Bar Event Other).freeze
   APPOINTMENT_TYPES = ['Appointment Only', 'Walk-up', 'First Come First Serve'].freeze

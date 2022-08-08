@@ -1,6 +1,6 @@
 tr id="#{dom_id location}"
   th scope="row"
-    =< location.name
+    =< link_to location.name, location
   td
     =< location.phone
   td 
@@ -9,3 +9,5 @@ tr id="#{dom_id location}"
     =< location.location_type
   td
     =< location.appointment
+  td
+    ==< location.notes

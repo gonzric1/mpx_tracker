@@ -1,6 +1,6 @@
 p style="color: green" = notice
 
-h1 Locations
+h1 Vaccine Locations
 
 #locations
 table class="table table-striped"
@@ -11,10 +11,9 @@ table class="table table-striped"
       th scope="col" Address
       th scope="col" Location Type
       th scope="col" Next Appointment
+      th scope="col" Notes
   tbody
   - @locations.each do |location|
     == render location
-    p
-      = link_to "Show this location", location
-
+  
 = link_to "New location", new_location_path
