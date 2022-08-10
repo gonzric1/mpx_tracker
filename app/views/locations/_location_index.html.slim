@@ -1,19 +1,19 @@
-tr id="#{dom_id location}"
-  th scope="row"
-    =< location.state
-  td
-    =< location.city
-  td
-    strong
-      =< link_to location.name, location
-  td
-    =< location.location_type
-  td
-    =< location.appointment
-  td
-    =< location.updated_at
-  td
-    =< location.phone
-tr
-  td colspan="7"
-    ==< location.notes
+.card[style="width:@import 'font-awesome'; 18rem;" id="#{dom_id location}"]
+  /img.card-img-top[src="..." alt="Card image cap"]
+  .card-body
+    h5.card-title
+      =location.name
+    p
+      i.fa-address-book.fa-solid
+
+  / p.card-text
+    /   | Some quick example text to build on the card title and make up the bulk of the card's content.
+  ul.list-group.list-group-flush
+    - location.appointment.each do |appointment|
+      =render "appointment", appointment: appointment
+  .card-body
+    i class="fa-solid fa-syringe"
+    a.card-link[href="#"]
+      | Card link
+    a.card-link[href="#"]
+      | Another link
