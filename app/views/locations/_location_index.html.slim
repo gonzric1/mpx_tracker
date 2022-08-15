@@ -1,19 +1,16 @@
-tr id="#{dom_id location}"
-  th scope="row"
-    =< location.state
-  td
-    =< location.city
-  td
-    strong
-      =< link_to location.name, location
-  td
-    =< location.location_type
-  td
-    =< location.appointment
-  td
-    =< location.updated_at
-  td
-    =< location.phone
-tr
-  td colspan="7"
-    ==< location.notes
+.col
+  .h-100.card[id=dom_id(location) style=("width: 18rem;")]
+    .card-body
+      h5.card-title
+        =< link_to location.name
+      h6.card-subtitle.mb-2.text-muted
+        =< address(location)
+      =appointment_type(location.appointment)
+      ==location.notes
+    .card-body
+      .card-link.text-start
+        =tel_to location.phone
+      .card-link.text-start
+        =link_to "Website", location.url
+    .card-footer
+      | Last Updated: #{time_ago_in_words(location.updated_at)} ago

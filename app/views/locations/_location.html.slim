@@ -2,6 +2,6 @@ h1 #{location.name} - #{location.location_type}
 h4 =address(location)
 h4 Phone: #{tel_to location.phone}
 h4 Website: #{link_to location.url, location.url}
-
+=appointment_type(location.appointment)
 h5.pt-3 More Information:
 ==< location.notes

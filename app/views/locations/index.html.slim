@@ -1,19 +1,11 @@
 h1 Monkey Pox Vaccine Locations
 
 #locations
+  .row.row-cols-auto.g-4
+    - @locations.each do |location|
+      == render "location_index", location: location
+
   = link_to "Add New location", new_location_path
-table class="table table-striped"
-  thead
-    tr
-      th scope="col" State
-      th scope="col" City
-      th scope="col" Location
-      th scope="col" Location Type
-      th scope="col" Appointment Type
-      th scope="col" Next Available
-      th scope="col" Phone
-  tbody
-  - @locations.each do |location|
-    == render "location_index", location: location
-  
+
+
 
