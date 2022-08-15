@@ -8,9 +8,12 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light.py-3
       li.nav-item.active
         =link_to "Home",   root_path, class: "nav-link"
         span.sr-only (current)
-      li.nav-item.nav-link =link_to "MonkeyPox Information"
-      -if current_user
-        li.nav-item.nav-link =link_to 'Sign Out', destroy_user_session_path, method: :delete
-      - else
-        li.nav-item.nav-link =link_to 'Sign In', new_user_session_path
-        li =link_to 'Sign Up', new_user_registration_path, class: "btn btn-primary ml-2"
+      li.nav-item.nav-link =link_to "MonkeyPox Information", "https://www.cdc.gov/poxvirus/monkeypox/index.html", target: "_blank"
+
+      li = link_to "Add New location", new_location_path, class: "btn btn-primary ml-2"
+
+      / -if current_user
+      /   li.nav-item.nav-link =link_to 'Sign Out', destroy_user_session_path, method: :delete
+      / - else
+      /   li.nav-item.nav-link =link_to 'Sign In', new_user_session_path
+      /   li =link_to 'Sign Up', new_user_registration_path, class: "btn btn-primary ml-2"

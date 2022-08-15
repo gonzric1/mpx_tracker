@@ -18,6 +18,8 @@ require 'faker'
     location_type: Location::LOCATION_TYPES.sample,
     appointment: [Location::APPOINTMENT_TYPES.sample],
     url: Faker::Internet.url(host: 'example.com'),
-    notes: Faker::Lorem.paragraphs(number: 1)
+    notes: Faker::Lorem.paragraphs(number: 1),
+    vaccines: [true, false].sample,
+    testing: [true, false].sample
   )
 end

@@ -14,6 +14,8 @@
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  url           :text
+#  testing       :boolean
+#  vaccines      :boolean
 #
 require 'rails_helper'
 

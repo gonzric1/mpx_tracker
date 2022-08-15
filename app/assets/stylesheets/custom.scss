@@ -1,0 +1,9 @@
+.state-link{
+  font-weight: bold;
+}
+.state-link:not(:last-child):after{
+  content: " |"
+}
+.test {
+
+}

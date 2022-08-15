@@ -2,15 +2,36 @@
   .h-100.card[id=dom_id(location) style=("width: 18rem;")]
     .card-body
       h5.card-title
-        =< link_to location.name
+        =< link_to location.name, location
       h6.card-subtitle.mb-2.text-muted
         =< address(location)
-      =appointment_type(location.appointment)
-      ==location.notes
+      .card-link.text-start
+        i.bi.bi-telephone>
+        = tel_to location.phone
+      div
+        i.bi.bi-link>
+        = link_to "Website", location.url
+
     .card-body
-      .card-link.text-start
-        =tel_to location.phone
-      .card-link.text-start
-        =link_to "Website", location.url
+      ul.list-group.list-group-flush
+        -if location.appointment.include?("Walk-up")
+          li.list-group-item
+            i.bi.bi-clock
+            |  Walk-up
+        -if location.appointment.include?("Appointment Only")
+          li.list-group-item
+            i.bi.bi-calendar-event
+            |  Appointment Only
+        -if location.vaccines
+          li.list-group-item
+            => image_tag("syringe.svg", size:"15x15")
+            | Vaccines
+        - if location.testing
+          li.list-group-item
+            i.bi.bi-eyedropper
+            |  Testing
+    .card-body[style="height: 150px"]
+      =truncate(strip_tags(location.notes.to_s), length:144) {link_to "more", location}
+
     .card-footer
       | Last Updated: #{time_ago_in_words(location.updated_at)} ago

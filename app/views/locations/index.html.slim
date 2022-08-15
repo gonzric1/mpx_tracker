@@ -1,11 +1,15 @@
 h1 Monkey Pox Vaccine Locations
 
 #locations
-  .row.row-cols-auto.g-4
-    - @locations.each do |location|
-      == render "location_index", location: location
-
-  = link_to "Add New location", new_location_path
+  .states
+    - @locations.each do |state, locations|
+       = link_to " #{short_state(state)}", "##{short_state state}", class: "state-link"
+  - @locations.each do |state, locations|
+    div[id="#{short_state state}" class='locations-state py-4']
+      h3 #{state}
+      .row.row-cols-auto.g-4
+        - locations.each do |location|
+          == render "location_index", location: location
 
 
 

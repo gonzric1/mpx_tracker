@@ -62,6 +62,10 @@ group :development, :test do
   # The following gems aids with the nuts and bolts
   # of interacting with the browser.
   gem 'webdrivers'
+
+  gem "better_errors"
+  gem "binding_of_caller"
+
 end
 
 group :development do
