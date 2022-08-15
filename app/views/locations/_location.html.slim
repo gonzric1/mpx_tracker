@@ -6,6 +6,22 @@ h4
 h4
   i.bi.bi-link>
   =link_to "Website", location.url
-=appointment_type(location.appointment)
+ul.list-group.list-group-flush
+  -if location.appointment.include?("Walk-up")
+    li.list-group-item
+      i.bi.bi-clock
+      |  Walk-up
+  -if location.appointment.include?("Appointment Only")
+    li.list-group-item
+      i.bi.bi-calendar-event
+      |  Appointment Only
+  -if location.vaccines
+    li.list-group-item
+      => image_tag("syringe.svg", size:"15x15")
+      | Vaccines
+  - if location.testing
+    li.list-group-item
+      i.bi.bi-eyedropper
+      |  Testing
 h5.pt-3 More Information:
 ==< location.notes
