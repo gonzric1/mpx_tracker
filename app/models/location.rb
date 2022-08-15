@@ -25,11 +25,8 @@ class Location < ApplicationRecord
   APPOINTMENT_TYPES = ['Appointment Only', 'Walk-up'].freeze
   validates :name, :location_type, :city, :state, presence: true
   validates :location_type, inclusion: {in: LOCATION_TYPES}
-  validate :valid_appointment_types
+  validates :appointment, inclusion: {in: APPOINTMENT_TYPES}
 
   private
 
-  def valid_appointment_types
-    errors.add(:appointment, :invalid, message: "Invalid appointment type") unless appointment.difference(APPOINTMENT_TYPES).empty?
-  end
 end
